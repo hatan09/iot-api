@@ -65,7 +65,7 @@ namespace IoT.Api.Controllers
             var record = await _recordRepository.FindLatest(userId);
             if(record is null) return NotFound("No record found with user");
 
-            return Ok(_mapper.Map<IEnumerable<RecordDTO>>(record));
+            return Ok(_mapper.Map<RecordDTO>(record));
         }
 
 
